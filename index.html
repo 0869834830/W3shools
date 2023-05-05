@@ -39,7 +39,7 @@
                     <h2 class="text-heading">Chicago</h2>
                     <div class="text-item">Thank you, Chicago - A night we won't forget.</div>
                 </div>
-            </div>
+            </img>
         </div>
 
         <div id="content">
@@ -103,9 +103,9 @@
                                 <h4 class="place-body__heading">New York</h4>
                                 <p class="place-body__time">Fri 27 Nov 2016</p>
                                 <p class="place-body__desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <a href="" class="place-body__btn">
+                                <button href="" class="place-body__btn js-buy-ticket">
                                     Buy Tickets
-                                </a>
+                                </button>
                             </div>
                         </div>
                         <div class="place__item">
@@ -114,9 +114,9 @@
                                 <h4 class="place-body__heading">Paris</h4>
                                 <p class="place-body__time">Sat 28 Nov 2016</p>
                                 <p class="place-body__desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo</p>
-                                <a href="" class="place-body__btn">
+                                <button href="" class="place-body__btn js-buy-ticket">
                                     Buy Tickets
-                                </a>
+                                </button>
                             </div>
                         </div>
                         <div class="place__item">
@@ -125,9 +125,9 @@
                                 <h4 class="place-body__heading">San Francisco</h4>
                                 <p class="place-body__time">Sun 29 Nov 2016</p>
                                 <p class="place-body__desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <a href="" class="place-body__btn">
+                                <button href="" class="place-body__btn js-buy-ticket">
                                     Buy Tickets
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -180,5 +180,72 @@
             </div>
         </div>
     </div>
+    <div class="modal js-modal">
+        <div class="modal-container js-modal-container">
+            <div class="modal-close js-modal-close">
+                <i class="modal-close fa-solid fa-xmark"></i>
+            </div>
+            <div class="modal-header">
+                
+                <i class="modal-header__icon fa-solid fa-suitcase"></i>
+                Tickets
+            </div>
+            <div class="modal-body">
+                <label for="" class="madal-label">
+                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                    Tickets, $15 per person
+                </label>
+                <input type="text" placeholder="How many?" class="madal-input">
+                <label for="" class="madal-label">
+                    <i class="fa-solid fa-user"></i>
+                    Send to
+                </label>
+                <input type="email" placeholder="Enter email...." class="madal-input">
+                <button id="buy-tickets">
+                    PAY
+                    <i class="fa-solid fa-check"></i>
+                </button>
+            </div>
+            <div class="modal-footer">
+                <p class="modal-help">Need <a href="">help?</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- b1: đặt tên biến để lấy giá trị ra
+         b2: tạp hàm để lấy giá trị cần hiển thị
+         b3: Nếu biến số nhiều thì tạo vòng lặp để lựa chọn rồi show giá trị b2
+           -->
+    <script>
+        // buyBtns:Tên biến
+        // document:đi qua đại diện trang web
+        // querySelectorAll:để lấy ra class ...
+        const buyBtns = document.querySelectorAll('.js-buy-ticket')
+        const modal = document.querySelector('.js-modal')
+        const modalClose =document.querySelector('.js-modal-close')
+        const modalcontainer =document.querySelector('.js-modal-container')
+        // Hàm hiển thị
+        function showbuyTickets()
+        {
+            // thêm open-css vào class 
+            modal.classList.add('open')
+        }
+        // Hàm hiển ẩn
+        function hidebuyTickets()
+        {
+            modal.classList.remove('open')
+        }
+        // Tạo biến mới số ít buyBtn để chạy vòng lặp 3 lần tương ứng với 3 nút , 
+        // mỗi lần lắng nghe click vào nút nào đó thì nút í được lưu lại biến buyBtn
+        for(const buyBtn of buyBtns)
+        {
+            buyBtn.addEventListener('click',showbuyTickets)
+        }
+
+        modalClose.addEventListener('click',hidebuyTickets)
+        modal.addEventListener('click',hidebuyTickets)
+        modalcontainer.addEventListener('click',function(event){
+            event.stopPropagation()
+        })
+    </script>
 </body>
 </html>
