@@ -255,7 +255,7 @@
         // mobile
         var header = document.getElementById('header')
         var mobileMenu =document.getElementById('mobile-menu')
-        function onclick (){
+        function click (){
             if(header.clientHeight === 46){
                 header.style.height='auto';
             }
@@ -263,7 +263,8 @@
                 header.style.height=null;
             }
         }
-        mobileMenu.onclick = onclick ;
+        mobileMenu.onclick = click ;
+        // menuItems
         var menuItems =document.querySelectorAll('#nav li a[href*="#"]')
         for(var i=0;i<=menuItems.length;i++)
         {

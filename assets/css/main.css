@@ -135,6 +135,7 @@ html{
 .section-content .content__item{
     width: 33.333%;
     text-align: center;
+    display: block;
 }
 .content__item-heading{
     margin: 15px 0;

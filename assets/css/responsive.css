@@ -10,4 +10,18 @@
     .menu-mobie{
         display: block;
     }
+    .section-content{
+        display: block;
+        
+    }
+    .section-content .content__item{
+        width: 100%;
+    }
+    .places-list{
+        display: inline-block;
+    }
+    .place__item{
+        width: 96%;
+        margin-bottom: 10px;
+    }
 }
