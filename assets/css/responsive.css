@@ -24,4 +24,11 @@
         width: 96%;
         margin-bottom: 10px;
     }
+    .contact-content{
+        display: block;
+    }
+    .contact-body{
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }
