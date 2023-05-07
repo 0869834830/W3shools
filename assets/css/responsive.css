@@ -1,0 +1,13 @@
+/* responsive */
+@media (max-width:740px){
+    #nav{
+        display: block;
+        overflow: hidden;
+    }
+    #header .search{
+        display: none;
+    }
+    .menu-mobie{
+        display: block;
+    }
+}
